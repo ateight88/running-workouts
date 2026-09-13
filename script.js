@@ -602,7 +602,7 @@ workouts.push(
     },
     cooldown:
       '10–20 min very easy running. Reduce the volume if this session is substantially larger than your normal workout load.',
-    source: 'Workout structure from the app data.',
+    source: '...',
   })),
 );
 
