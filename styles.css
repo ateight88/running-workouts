@@ -101,6 +101,9 @@ a { color: inherit; }
 .difficulty { color: var(--muted); }
 .workout-card h3 { margin: 44px 0 12px; font-size: 2.1rem; letter-spacing: -.055em; line-height: 1; }
 .workout-description { color: var(--muted); line-height: 1.55; min-height: 74px; }
+.athlete-name { margin: -2px 0 14px; font: 700 .74rem "DM Mono", monospace; text-transform: uppercase; letter-spacing: .06em; color: var(--orange); }
+.source-note { margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--line); font-size: .72rem; line-height: 1.45; color: var(--muted); }
+
 .session-preview { margin: 18px 0 24px; font: 500 .95rem "DM Mono", monospace; }
 .workout-toggle { margin-top: auto; padding: 15px 0 0; border: 0; border-top: 1px solid var(--line); background: transparent; display: flex; justify-content: space-between; cursor: pointer; font-weight: 700; }
 .workout-toggle span { font-size: 1.2rem; transition: transform .2s ease; }
