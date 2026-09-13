@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A dependency-free running workout pace planner built with HTML, CSS and JavaScript."
+    />
+    <title>Train Like the Pros — Vanilla</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Train Like the Pros home">
+        <span class="brand-mark">TL</span>
+        <span>TRAIN LIKE THE PROS</span>
+      </a>
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle dark mode"
+      >
+        ◐
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <p class="eyebrow">RUNNING WORKOUT PLANNER</p>
+          <h1>Pro sessions.<br /><em>At your pace.</em></h1>
+          <p class="lead">These are classic workouts used by pro runners.</p>
+          <p class="lead">
+            Use a recent race result to scale demanding running sessions to your
+            current fitness. Everything is calculated locally in your browser.
+          </p>
+          <a class="button primary" href="#calculator"
+            >Set my paces <span aria-hidden="true">↓</span></a
+          >
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="track-ring ring-1"></div>
+          <div class="track-ring ring-2"></div>
+          <div class="track-ring ring-3"></div>
+          <div class="pace-chip chip-a"><b>3:42</b><span>/km</span></div>
+          <div class="pace-chip chip-b">
+            <b>5 × 1K</b><span>threshold</span>
+          </div>
+          <div class="pace-chip chip-c"><b>90 sec</b><span>recovery</span></div>
+        </div>
+      </section>
+
+      <section class="calculator-section" id="calculator">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">01 · YOUR FITNESS</p>
+              <h2>Start with a recent result.</h2>
+            </div>
+            <p>
+              Choose a common race distance and enter your time. The planner
+              estimates equivalent paces for the sessions below.
+            </p>
+          </div>
+
+          <form class="calculator-card" id="paceForm">
+            <div
+              class="distance-picker"
+              role="group"
+              aria-label="Race distance"
+            >
+              <button type="button" class="distance-option" data-distance="3">
+                3K
+              </button>
+              <button
+                type="button"
+                class="distance-option active"
+                data-distance="5"
+              >
+                5K
+              </button>
+              <button type="button" class="distance-option" data-distance="10">
+                10K
+              </button>
+              <button
+                type="button"
+                class="distance-option"
+                data-distance="21.0975"
+              >
+                Half
+              </button>
+              <button
+                type="button"
+                class="distance-option"
+                data-distance="42.195"
+              >
+                Marathon
+              </button>
+            </div>
+
+            <div class="time-entry">
+              <label>
+                <span>Hours</span>
+                <input
+                  id="hours"
+                  type="number"
+                  min="0"
+                  max="9"
+                  value="0"
+                  inputmode="numeric"
+                />
+              </label>
+              <span class="time-colon">:</span>
+              <label>
+                <span>Minutes</span>
+                <input
+                  id="minutes"
+                  type="number"
+                  min="0"
+                  max="59"
+                  value="20"
+                  inputmode="numeric"
+                />
+              </label>
+              <span class="time-colon">:</span>
+              <label>
+                <span>Seconds</span>
+                <input
+                  id="seconds"
+                  type="number"
+                  min="0"
+                  max="59"
+                  value="0"
+                  inputmode="numeric"
+                />
+              </label>
+            </div>
+
+            <div class="unit-row">
+              <div>
+                <span class="mini-label">PACE DISPLAY</span>
+                <div class="segmented" role="group" aria-label="Pace unit">
+                  <button class="unit-btn active" type="button" data-unit="km">
+                    min / km
+                  </button>
+                  <button class="unit-btn" type="button" data-unit="mi">
+                    min / mile
+                  </button>
+                </div>
+              </div>
+              <button class="button primary calculate" type="submit">
+                Calculate paces
+              </button>
+            </div>
+          </form>
+
+          <div class="pace-results" id="paceResults" aria-live="polite">
+            <article class="pace-result easy">
+              <span>Easy</span><strong id="easyPace">5:18–5:46</strong
+              ><small>conversational</small>
+            </article>
+            <article class="pace-result steady">
+              <span>Steady</span><strong id="steadyPace">4:50–5:10</strong
+              ><small>aerobic</small>
+            </article>
+            <article class="pace-result threshold">
+              <span>Threshold</span><strong id="thresholdPace">4:12–4:20</strong
+              ><small>controlled hard</small>
+            </article>
+            <article class="pace-result interval">
+              <span>Interval</span><strong id="intervalPace">3:53–4:02</strong
+              ><small>3K–5K effort</small>
+            </article>
+            <article class="pace-result repetition">
+              <span>Repetition</span><strong id="repPace">3:38–3:48</strong
+              ><small>fast + relaxed</small>
+            </article>
+          </div>
+          <p class="result-note" id="resultNote">
+            Based on a 20:00 5K. Training paces are practical estimates, not
+            physiological test results.
+          </p>
+        </div>
+      </section>
+
+      <section class="workouts shell" id="workouts">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 · THE SESSIONS</p>
+            <h2>Pick the stimulus.</h2>
+          </div>
+          <p>
+            The session targets automatically update when you change your race
+            result or pace units.
+          </p>
+        </div>
+
+        <div class="filter-bar" id="filterBar">
+          <button type="button" class="filter-btn active" data-filter="all">
+            All
+          </button>
+          <button type="button" class="filter-btn" data-filter="threshold">
+            Threshold
+          </button>
+          <button type="button" class="filter-btn" data-filter="vo2">
+            VO₂ max
+          </button>
+          <button type="button" class="filter-btn" data-filter="speed">
+            Speed
+          </button>
+          <button type="button" class="filter-btn" data-filter="aerobic">
+            Aerobic
+          </button>
+        </div>
+
+        <div class="workout-grid" id="workoutGrid"></div>
+      </section>
+
+      <section class="principles">
+        <div class="shell principle-grid">
+          <div>
+            <p class="eyebrow">03 · TRAIN SMART</p>
+            <h2>Borrow the method,<br />not the mileage.</h2>
+          </div>
+          <div class="principle-list">
+            <article>
+              <b>01</b>
+              <div>
+                <h3>Keep the purpose clear</h3>
+                <p>
+                  Every workout has one main job. Avoid turning easy running
+                  into another hard session.
+                </p>
+              </div>
+            </article>
+            <article>
+              <b>02</b>
+              <div>
+                <h3>Scale the volume</h3>
+                <p>
+                  Elite sessions are reference points. Reduce repetitions or
+                  duration when the total workload is too large.
+                </p>
+              </div>
+            </article>
+            <article>
+              <b>03</b>
+              <div>
+                <h3>Finish in control</h3>
+                <p>
+                  A productive workout leaves enough margin to recover and train
+                  again consistently.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <p>Vanilla HTML · CSS · JavaScript demo</p>
+      <p>Training guidance is informational only.</p>
+    </footer>
+
+    <template id="workoutTemplate">
+      <article class="workout-card">
+        <div class="card-top">
+          <span class="workout-tag"></span>
+          <span class="difficulty"></span>
+        </div>
+        <h3 class="workout-title"></h3>
+        <p class="workout-description"></p>
+        <div class="session-preview"></div>
+        <button class="workout-toggle" type="button" aria-expanded="false">
+          View session <span>+</span>
+        </button>
+        <div class="workout-details" hidden>
+          <div class="detail-block warmup"></div>
+          <div class="detail-block mainset"></div>
+          <div class="detail-block cooldown"></div>
+          <button class="copy-button" type="button">Copy workout</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
