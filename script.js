@@ -27,7 +27,7 @@ const workouts = [
     category: 'threshold',
     tag: 'Threshold',
     difficulty: 'Hard',
-    athlete: 'Medium Effort Workout',
+    athlete: 'Medium Level Workout',
     title: 'Controlled 2Ks',
     description:
       'Long threshold repetitions that reward restraint. Keep every rep smooth and consistent.',
@@ -42,7 +42,7 @@ const workouts = [
     category: 'vo2',
     tag: 'VO₂ max',
     difficulty: 'Hard',
-    athlete: 'Medium Effort Workout',
+    athlete: 'Medium Level Workout',
     title: 'Five-Minute Repeats',
     description:
       'A classic high-aerobic session: long enough to load the system, short enough to keep form intact.',
@@ -57,7 +57,7 @@ const workouts = [
     category: 'vo2',
     tag: 'VO₂ max',
     difficulty: 'Very hard',
-    athlete: 'Medium Effort Workout',
+    athlete: 'Medium Level Workout',
     title: 'Broken 3K',
     description:
       'Fast repetitions clustered into two blocks. Quality stays high because recovery is carefully rationed.',
@@ -72,7 +72,7 @@ const workouts = [
     category: 'speed',
     tag: 'Speed',
     difficulty: 'Medium',
-    athlete: 'Medium Effort Workout',
+    athlete: 'Medium Level Workout',
     title: 'Relaxed 400s',
     description:
       'Fast but composed running with enough recovery to protect mechanics and keep the final rep sharp.',
@@ -87,7 +87,7 @@ const workouts = [
     category: 'speed',
     tag: 'Speed',
     difficulty: 'Medium',
-    athlete: 'Medium Effort Workout',
+    athlete: 'Medium Level Workout',
     title: 'Hill Power',
     description:
       'Short hill repetitions develop force and mechanics without demanding exact track splits.',
@@ -102,7 +102,7 @@ const workouts = [
     category: 'aerobic',
     tag: 'Aerobic',
     difficulty: 'Medium',
-    athlete: 'Medium Effort Workout',
+    athlete: 'Medium Level Workout',
     title: 'Progressive Long Run',
     description:
       'Build endurance without turning the whole run into a workout. Progress only in the final third.',
@@ -117,7 +117,7 @@ const workouts = [
     category: 'aerobic',
     tag: 'Aerobic',
     difficulty: 'Easy',
-    athlete: 'Medium Effort Workout',
+    athlete: 'Medium Level Workout',
     title: 'Easy + Strides',
     description:
       'A low-cost session that maintains rhythm and speed while prioritizing recovery.',
@@ -132,7 +132,7 @@ const workouts = [
     category: 'vo2',
     tag: 'Mixed',
     difficulty: 'Medium',
-    athlete: 'Medium Effort Workout',
+    athlete: 'Medium Level Workout',
     title: 'One-Minute Fartlek',
     description:
       'A flexible speed session for road or trail where effort matters more than perfectly measured splits.',
