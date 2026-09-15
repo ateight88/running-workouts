@@ -8,6 +8,141 @@ const state = {
 
 const workouts = [
   {
+    id: 'cruise-1k',
+    category: 'threshold',
+    tag: 'Threshold',
+    difficulty: 'Medium',
+    athlete: 'Medium Effort Workout',
+    title: 'Cruise 1Ks',
+    description:
+      'Accumulate threshold volume in repeatable blocks without letting the session become a race.',
+    preview: '5–6 × 1 km · 60 sec float',
+    warmup: '15–20 min easy + 4 × 20 sec strides.',
+    main: ({ threshold }) =>
+      `5–6 × 1 km at ${threshold} pace with 60 sec very easy jog between reps.`,
+    cooldown: '10–15 min easy.',
+  },
+  {
+    id: 'norwegian-2k',
+    category: 'threshold',
+    tag: 'Threshold',
+    difficulty: 'Hard',
+    athlete: 'Medium Effort Workout',
+    title: 'Controlled 2Ks',
+    description:
+      'Long threshold repetitions that reward restraint. Keep every rep smooth and consistent.',
+    preview: '4 × 2 km · 90 sec jog',
+    warmup: '20 min easy + drills + 4 strides.',
+    main: ({ threshold }) =>
+      `4 × 2 km at ${threshold} pace with 90 sec easy jog. Reduce to 3 reps if needed.`,
+    cooldown: '15 min easy.',
+  },
+  {
+    id: 'five-minute',
+    category: 'vo2',
+    tag: 'VO₂ max',
+    difficulty: 'Hard',
+    athlete: 'Medium Effort Workout',
+    title: 'Five-Minute Repeats',
+    description:
+      'A classic high-aerobic session: long enough to load the system, short enough to keep form intact.',
+    preview: '5 × 5 min · 2 min jog',
+    warmup: '20 min easy + 4 strides.',
+    main: ({ interval }) =>
+      `5 × 5 min around ${interval} pace with 2 min easy jog. Aim for even effort rather than a fast first rep.`,
+    cooldown: '15–20 min easy.',
+  },
+  {
+    id: 'broken-3k',
+    category: 'vo2',
+    tag: 'VO₂ max',
+    difficulty: 'Very hard',
+    athlete: 'Medium Effort Workout',
+    title: 'Broken 3K',
+    description:
+      'Fast repetitions clustered into two blocks. Quality stays high because recovery is carefully rationed.',
+    preview: '2 sets · 5 × 600 m',
+    warmup: '20 min easy + drills + 4–6 strides.',
+    main: ({ interval }) =>
+      `2 sets of 5 × 600 m at ${interval} pace. Jog 60 sec between reps and 3 min between sets.`,
+    cooldown: '15 min easy.',
+  },
+  {
+    id: 'speed-400',
+    category: 'speed',
+    tag: 'Speed',
+    difficulty: 'Medium',
+    athlete: 'Medium Effort Workout',
+    title: 'Relaxed 400s',
+    description:
+      'Fast but composed running with enough recovery to protect mechanics and keep the final rep sharp.',
+    preview: '10–12 × 400 m · 200 m jog',
+    warmup: '20 min easy + mobility + 6 strides.',
+    main: ({ repetition }) =>
+      `10–12 × 400 m at ${repetition} pace with 200 m relaxed jog. Stop before form deteriorates.`,
+    cooldown: '15 min easy.',
+  },
+  {
+    id: 'hill-power',
+    category: 'speed',
+    tag: 'Speed',
+    difficulty: 'Medium',
+    athlete: 'Medium Effort Workout',
+    title: 'Hill Power',
+    description:
+      'Short hill repetitions develop force and mechanics without demanding exact track splits.',
+    preview: '10 × 45 sec uphill · jog down',
+    warmup: '20 min easy + drills + 4 strides.',
+    main: () =>
+      '10 × 45 sec uphill at strong controlled effort. Jog easily back down and start each rep recovered enough to run tall.',
+    cooldown: '15 min easy.',
+  },
+  {
+    id: 'steady-long',
+    category: 'aerobic',
+    tag: 'Aerobic',
+    difficulty: 'Medium',
+    athlete: 'Medium Effort Workout',
+    title: 'Progressive Long Run',
+    description:
+      'Build endurance without turning the whole run into a workout. Progress only in the final third.',
+    preview: '80–110 min · progressive finish',
+    warmup: 'First 15 min deliberately relaxed.',
+    main: ({ easy, steady }) =>
+      `Run mostly at ${easy} pace, then gradually progress toward ${steady} pace during the final 20–30 min.`,
+    cooldown: 'Finish with 5–10 min very easy if needed.',
+  },
+  {
+    id: 'easy-strides',
+    category: 'aerobic',
+    tag: 'Aerobic',
+    difficulty: 'Easy',
+    athlete: 'Medium Effort Workout',
+    title: 'Easy + Strides',
+    description:
+      'A low-cost session that maintains rhythm and speed while prioritizing recovery.',
+    preview: '45–60 min easy · 6 strides',
+    warmup: 'Start easier than your normal easy pace for 10 min.',
+    main: ({ easy }) =>
+      `45–60 min around ${easy} pace, then 6 × 20 sec relaxed strides with full easy recovery.`,
+    cooldown: '5 min walk or easy jog.',
+  },
+  {
+    id: 'fartlek',
+    category: 'vo2',
+    tag: 'Mixed',
+    difficulty: 'Medium',
+    athlete: 'Medium Effort Workout',
+    title: 'One-Minute Fartlek',
+    description:
+      'A flexible speed session for road or trail where effort matters more than perfectly measured splits.',
+    preview: '15 × 1 min on / 1 min off',
+    warmup: '15–20 min easy + 4 strides.',
+    main: ({ interval, easy }) =>
+      `15 × 1 min around ${interval} effort / 1 min easy around ${easy} effort. Keep the “on” minutes smooth.`,
+    cooldown: '10–15 min easy.',
+  },
+  {
     id: 'jakob-am-threshold',
     category: 'threshold',
     tag: 'Threshold',
