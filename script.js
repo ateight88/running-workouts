@@ -12,7 +12,7 @@ const workouts = [
     category: 'threshold',
     tag: 'Threshold',
     difficulty: 'Medium',
-    athlete: 'Medium Effort Workout',
+    athlete: 'Medium Level Workout',
     title: 'Cruise 1Ks',
     description:
       'Accumulate threshold volume in repeatable blocks without letting the session become a race.',
